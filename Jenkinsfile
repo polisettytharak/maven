@@ -2,7 +2,7 @@ node('master')
 {
     stage('ContinuousDownload')
     {
-        git 'https://github.com/intelliqittrainings/maven.git'
+        git 'https://github.com/polisettytharak/maven'
     }
     stage('ContinuousBuild')
     {
@@ -14,8 +14,7 @@ node('master')
     }
     stage('ContinuousTesting')
     {
-        git 'https://github.com:selenium-saikrishna/FunctionalTesting.git'
-        sh label: '', script: 'java -jar /home/ubuntu/.jenkins/workspace/Scripted Pipeline/webapp/jesting.jar'
+       git 'https://github.com/polisettytharak/maven'
     }
     stage('ContinuousDelivery')
     {
