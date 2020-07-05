@@ -2,7 +2,7 @@ node('master')
 {
     stage('ContinuousDownload')
     {
-        git 'https://github.com/polisettytharak/maven'
+        git 'https://github.com/polisettytharak/maven.git'
     }
     stage('ContinuousBuild')
     {
@@ -14,8 +14,9 @@ node('master')
     }
     stage('ContinuousTesting')
     {
-       git 'https://github.com/polisettytharak/maven'
+       git 'https://github.com/polisettytharak/maven.git'
     }
+	
     stage('ContinuousDelivery')
     {
         sh label: '', script: 'scp /home/ubuntu/.jenkins/workspace/pipeline/webapp/target/webapp.war ubuntu@172.31.60.23:/var/lib/tomcat8/webapps/prodapp.war'
